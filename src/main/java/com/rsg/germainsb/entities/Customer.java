@@ -14,17 +14,21 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name = "firstname")
+	@Column(name = "firstname", nullable = false)
 	private String firstName; // This produces a column called: first_name (snake-case)
 	
+	@Column(nullable = false)
 	private String lastName; // This produces a column called: first_name
 	
+	@Column(nullable = false, unique = true)
 	private String email;
-
+	
+	@Column()
 	public long getId() {
 		return id;
 	}
 
+	@Column()
 	public void setId(long id) {
 		this.id = id;
 	}
