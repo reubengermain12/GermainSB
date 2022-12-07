@@ -26,7 +26,16 @@ public class Customer {
 	// Default Constructor
 	public Customer() {}
 	
-	// Custom Contructor (All Args)
+	
+	// No ID Constructor - Used for inserting
+	public Customer(String firstName, String lastName, String email) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
+	// Custom Contructor (All Args) - used for reading
 	@Column()
 	public long getId() {
 		return id;
