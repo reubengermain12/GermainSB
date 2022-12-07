@@ -1,11 +1,13 @@
 package com.rsg.germainsb.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Customer {
 
 	// Define Table Columns
+	@Id
 	private long id;
 	
 	private String firstName;
