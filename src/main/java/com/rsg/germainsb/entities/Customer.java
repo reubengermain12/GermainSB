@@ -13,9 +13,9 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String firstName;
+	private String firstName; // This produces a column called: first_name (snake-case)
 	
-	private String lastName;
+	private String lastName; // This produces a column called: first_name
 	
 	private String email;
 
