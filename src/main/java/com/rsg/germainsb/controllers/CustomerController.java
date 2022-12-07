@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerController {
 
 	//GET	-	READ
-	@GetMapping("/hello")	//localhost:8080/hello
-	public String hello() {
-		return "Hello";
-	}
+//	@GetMapping("/hello")	//localhost:8080/hello
+//	public String hello() {
+//		return "Hello";
+//	}
 	//POST	-	CREATE
 	
 	//PUT	-	UPDATE
