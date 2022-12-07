@@ -1,5 +1,6 @@
 package com.rsg.germainsb.controllers;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 // The purpose of this is to handle incoming HTTP requests and send responses
