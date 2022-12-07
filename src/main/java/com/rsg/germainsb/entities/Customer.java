@@ -1,5 +1,7 @@
 package com.rsg.germainsb.entities;
 
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -76,6 +78,26 @@ public class Customer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	// For Testing
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, firstName, id, lastName);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
+				&& Objects.equals(lastName, other.lastName);
 	}
 	
 	
