@@ -23,9 +23,21 @@ public class Customer {
 	@Column(nullable = false, unique = true)
 	private String email;
 	
+	// Default Constructor
+	public Customer() {}
+	
+	// Custom Contructor (All Args)
 	@Column()
 	public long getId() {
 		return id;
+	}
+
+	public Customer(long id, String firstName, String lastName, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
 	}
 
 	@Column()
