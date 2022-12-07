@@ -29,6 +29,9 @@ public class CustomerController {
 	@PostMapping("/create") // localhost:8080/customer/create
 	public Customer create(@RequestBody Customer customer) {
 		this.customers.add(customer);
+		
+		// Returns the latest entry added to the list
+		return this.customers.get(this.customers.size() - 1);
 	}
 	
 	//PUT	-	UPDATE
