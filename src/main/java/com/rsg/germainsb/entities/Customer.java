@@ -1,5 +1,6 @@
 package com.rsg.germainsb.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	@Column(name = "firstname")
 	private String firstName; // This produces a column called: first_name (snake-case)
 	
 	private String lastName; // This produces a column called: first_name
