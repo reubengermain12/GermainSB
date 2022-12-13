@@ -19,22 +19,28 @@ public class CustomerController {
 
 	// TEMPORARY storage until I implement real database later!
 	private List<Customer> customers = new ArrayList<>();
-	
-	//GET	-	READ
-//	@GetMapping("/hello")	//localhost:8080/hello
-//	public String hello() {
-//		return "Hello";
-//	}
-	//POST	-	CREATE
+
+	// GET - READ
+	// There are 2 types of reads: Read ALL & Read by ID
+	@GetMapping("/readAll")
+	public List<Customer> readAll() {
+		return this.customers;
+	}
+
+	// @GetMapping("/hello") //localhost:8080/hello
+	// public String hello() {
+	// return "Hello";
+	// }
+	// POST - CREATE
 	@PostMapping("/create") // localhost:8080/customer/create
 	public Customer create(@RequestBody Customer customer) {
 		this.customers.add(customer);
-		
+
 		// Returns the latest entry added to the list
 		return this.customers.get(this.customers.size() - 1);
 	}
-	
-	//PUT	-	UPDATE
-	
-	//DELETE	-	DELETE
+
+	// PUT - UPDATE
+
+	// DELETE - DELETE
 }

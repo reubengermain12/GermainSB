@@ -15,20 +15,20 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@Column(name = "firstname", nullable = false)
 	private String firstName; // This produces a column called: first_name (snake-case)
-	
+
 	@Column(nullable = false)
 	private String lastName; // This produces a column called: first_name
-	
+
 	@Column(nullable = false, unique = true)
 	private String email;
-	
+
 	// Default Constructor
-	public Customer() {}
-	
-	
+	public Customer() {
+	}
+
 	// No ID Constructor - Used for inserting
 	public Customer(String firstName, String lastName, String email) {
 		super();
@@ -86,7 +86,6 @@ public class Customer {
 		return Objects.hash(email, firstName, id, lastName);
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -99,7 +98,5 @@ public class Customer {
 		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName);
 	}
-	
-	
-	
+
 }
