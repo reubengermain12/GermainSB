@@ -20,14 +20,11 @@ import com.rsg.germainsb.entities.Customer;
 @RequestMapping("/customer") // Adds a prefix to the request URLs
 public class CustomerController {
 
-	// TEMPORARY storage until I implement real database later!
-	private List<Customer> customers = new ArrayList<>();
 
 	// GET - READ
 	// There are 2 types of reads: Read ALL & Read by ID
 	@GetMapping("/readAll")
 	public List<Customer> readAll() {
-		return this.customers;
 	}
 
 	// @GetMapping("/hello") //localhost:8080/hello
@@ -38,35 +35,22 @@ public class CustomerController {
 	// ReadByID
 	@GetMapping("/readByID/{id}")
 	public Customer readByID(@PathVariable int id) {
-		return this.customers.get(id);
 	}
 
 	// POST - CREATE
 	@PostMapping("/create") // localhost:8080/customer/create
 	public Customer create(@RequestBody Customer customer) {
-		this.customers.add(customer);
-
-		// Returns the latest entry added to the list
-		return this.customers.get(this.customers.size() - 1);
 	}
 
 	// PUT - UPDATE
 	@PutMapping("/update/{id}")
 	public Customer update(@PathVariable int id, @RequestBody Customer customer) {
-		//Removing the original customer
-		this.customers.remove(id);
 		
-		//Add the updated customer
-		this.customers.add(id, customer);
-		
-		//Return the updated user
-		return this.customers.get(id);
 	}
 	
 
 	// DELETE - DELETE
 	@DeleteMapping("/delete/{id}")
 	public Customer delete(@PathVariable int id) {
-		return this.customers.remove(id);
 	}
 }
