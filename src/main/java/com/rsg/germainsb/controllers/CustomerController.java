@@ -32,13 +32,13 @@ public class CustomerController {
 	// public String hello() {
 	// return "Hello";
 	// }
-	
-	//ReadByID
-	@GetMapping("/readByID")
+
+	// ReadByID
+	@GetMapping("/readByID/{id}")
 	public Customer readByID(@PathVariable int id) {
-		
+
 	}
-	
+
 	// POST - CREATE
 	@PostMapping("/create") // localhost:8080/customer/create
 	public Customer create(@RequestBody Customer customer) {
