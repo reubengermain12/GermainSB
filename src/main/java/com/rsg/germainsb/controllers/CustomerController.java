@@ -36,7 +36,7 @@ public class CustomerController {
 	// ReadByID
 	@GetMapping("/readByID/{id}")
 	public Customer readByID(@PathVariable int id) {
-
+		return this.customers.get(id);
 	}
 
 	// POST - CREATE
