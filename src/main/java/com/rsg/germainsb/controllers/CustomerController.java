@@ -36,7 +36,7 @@ public class CustomerController {
 
 	// ReadByID
 	@GetMapping("/readByID/{id}")
-	public Customer readByID(@PathVariable int id) {
+	public Customer readByID(@PathVariable long id) {
 		return this.service.readByID(id);
 	}
 
@@ -48,14 +48,14 @@ public class CustomerController {
 
 	// PUT - UPDATE
 	@PutMapping("/update/{id}")
-	public Customer update(@PathVariable int id, @RequestBody Customer customer) {
+	public Customer update(@PathVariable long id, @RequestBody Customer customer) {
 		return this.service.update(id, customer);
 	}
 	
 
 	// DELETE - DELETE
 	@DeleteMapping("/delete/{id}")
-	public Customer delete(@PathVariable int id) {
+	public boolean delete(@PathVariable long id) {
 		return this.service.delete(id);
 	}
 }
