@@ -11,25 +11,24 @@ import jakarta.persistence.Id;
 @Entity
 public class Customer {
 
-	// Define Table Columns
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
 	@Column(name = "firstname", nullable = false)
-	private String firstName; // This produces a column called: first_name (snake-case)
+	private String firstName;
 
 	@Column(nullable = false)
-	private String lastName; // This produces a column called: first_name
+	private String lastName;
 
 	@Column(nullable = false, unique = true)
 	private String email;
 
-	// Default Constructor
+	
 	public Customer() {
 	}
 
-	// No ID Constructor - Used for inserting
+	
 	public Customer(String firstName, String lastName, String email) {
 		super();
 		this.firstName = firstName;
@@ -37,7 +36,7 @@ public class Customer {
 		this.email = email;
 	}
 
-	// Custom Contructor (All Args) - used for reading
+	
 	@Column()
 	public long getId() {
 		return id;
@@ -80,7 +79,7 @@ public class Customer {
 		this.email = email;
 	}
 
-	// For Testing
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(email, firstName, id, lastName);

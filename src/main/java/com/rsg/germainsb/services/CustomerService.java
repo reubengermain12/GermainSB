@@ -1,6 +1,5 @@
 package com.rsg.germainsb.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -34,13 +33,13 @@ public class CustomerService {
 
 
 	public Customer update(long id, Customer customer) {
-		// 1) Get the existing entry.
+	
 		Customer existing = this.repo.findById(id).get();
-		// 2 Change the existing entry, using our new customer object above.
+	
 		existing.setFirstName(customer.getFirstName());
 		existing.setLastName(customer.getLastName());
 		existing.setEmail(customer.getEmail());
-		// 3) Save the entry back into the Database.
+		
 		return this.repo.saveAndFlush(existing);
 	}
 	
@@ -48,6 +47,6 @@ public class CustomerService {
 	public boolean delete(long id) {
 		this.repo.deleteById(id);
 		
-		return !this.repo.existsById(id); // This should be false. If it's true, then the delete failed somehow.
+		return !this.repo.existsById(id);
 	}
 }
