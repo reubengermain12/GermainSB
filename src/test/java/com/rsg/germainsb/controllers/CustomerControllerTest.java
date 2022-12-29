@@ -17,8 +17,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class CustomerControllerTest {
 
 	@Autowired
-	private MockMvc mvc; // used for sending mock requests
+	private MockMvc mvc;
 	
 	@Autowired
-	private ObjectMapper mapper; // used for converting to JSON
+	private ObjectMapper mapper;
 }
