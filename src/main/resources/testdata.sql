@@ -1,0 +1,1 @@
+INSERT INTO `customer` (`firstname`, `last_name`, `email`) VALUES ('Reuben', 'Germain', 'reubengermain@yahoo.co.uk');
